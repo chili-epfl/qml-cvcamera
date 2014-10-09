@@ -1,0 +1,10 @@
+#Temp build files
+*.pyc
+build*/
+
+#Temp QT files
+*.user
+
+#Annoying files
+*~
+

@@ -1,0 +1,4 @@
+module CVCamera
+plugin cvcamera
+typeinfo cvcamera.qmltypes
+
