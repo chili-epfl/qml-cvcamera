@@ -1,4 +1,3 @@
-
 qml-cvcamera
 ============
 
@@ -20,7 +19,7 @@ The QML API consists of the following:
 >  - **deviceList** : `QStringList` - Names of the detected cameras, indices corresponding to IDs
 >  - **cvImage** : `QVariant` - Contains the camera image as a `cv::Mat`
 
-The full API (API above + non-user parts) can be seen in [cvcamera.types](cvcamera.types)
+The full API (API above + non-user parts) can be seen in [cvcamera.types](cvcamera.types).
 
 CVCamera can be used in one of two ways:
 
@@ -34,12 +33,12 @@ Desktop Build
 
 2. Build and install OpenCV:
 
-```
-cd platforms
-mkdir build-desktop
-cd build-desktop
-cmake ../.. -DCMAKE_INSTALL_PREFIX=/usr
-```
+  ```
+  cd platforms
+  mkdir build-desktop
+  cd build-desktop
+  cmake ../.. -DCMAKE_INSTALL_PREFIX=/usr
+  ```
 
   At this point, OpenCV components other than `calib3d`, `core`, `features2d`, `flann`, `highgui`, `imgcodecs`, `imgproc`, `video` and `videoio` are not needed and can be disabled. **Note:** I had to disable `WITH_GSTREAMER` manually for it to compile without errors. It is not needed and can be disabled. These options can be accessed with `ccmake ../..`.
 
@@ -59,6 +58,8 @@ cmake ../.. -DCMAKE_INSTALL_PREFIX=/usr
   ```
 
   Now the CVCamera QML plugin is installed alongside Qt's QML plugins and can be used similar to any other plugin.
+
+  Note that you still need to bundle the required OpenCV libraries with `ANDROID_EXTRA_LIBS` and give camera access to your app with `ANDROID_PERMISSIONS` and `ANDROID_FEATURES` in the project that uses CVCamera. See [samples/preview/preview.pro](samples/preview/preview.pro) for an example.
 
 Android Build
 -------------
@@ -131,4 +132,5 @@ These instructions assume `armv7-a` target architecture. For other architectures
 Running Samples
 ---------------
 
-Coming soon...
+See [samples/README.md](samples/README.md).
+
