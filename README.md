@@ -21,7 +21,7 @@ The QML API consists of the following:
 
 The full API (API above + non-user parts) can be seen in [cvcamera.types](cvcamera.types).
 
-CVCamera can be used in one of two ways:
+CVCamera can be used in one or both of two ways:
 
   - Set a `CVCamera` object as the `source` property of a `VideoOutput` in order to display in on the screen
   - Set a `CVCamera` object's `cvImage` property as some property of a QML object to export the camera image as a cv::Mat. The format of this image is usually RGB in desktop and YUV420sp (a.k.a YUV NV21) on Android.
@@ -58,8 +58,6 @@ Desktop Build
   ```
 
   Now the CVCamera QML plugin is installed alongside Qt's QML plugins and can be used similar to any other plugin.
-
-  Note that you still need to bundle the required OpenCV libraries with `ANDROID_EXTRA_LIBS` and give camera access to your app with `ANDROID_PERMISSIONS` and `ANDROID_FEATURES` in the project that uses CVCamera. See [samples/preview/preview.pro](samples/preview/preview.pro) for an example.
 
 Android Build
 -------------
@@ -128,6 +126,8 @@ These instructions assume `armv7-a` target architecture. For other architectures
   ```
 
   Now the CVCamera QML plugin is installed alongside Qt's QML plugins and can be used similar to any other plugin.
+  
+  Note that you still need to bundle the required OpenCV libraries with `ANDROID_EXTRA_LIBS` and give camera access to your app with `ANDROID_PERMISSIONS` and `ANDROID_FEATURES` in the project that uses CVCamera. See [samples/preview/preview.pro](samples/preview/preview.pro) for an example.
 
 Running Samples
 ---------------
