@@ -1,5 +1,5 @@
-preview
--------
+dual-camera
+-----------
 
 Displays two camera images on the screen simultaneously.
 
