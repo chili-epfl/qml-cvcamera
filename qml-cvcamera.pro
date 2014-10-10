@@ -1,5 +1,5 @@
 TEMPLATE = lib
-TARGET = cvcamera
+TARGET = cvcameraplugin
 
 CONFIG += qt plugin c++11 nostrip
 CONFIG -= android_install
