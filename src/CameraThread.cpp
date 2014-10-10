@@ -104,9 +104,9 @@ void CameraTask::doWork()
         if(cvImageBuf){
 
 #ifdef ANDROID //Assume YUV420sp camera image
-            memcpy(cvImageBuf,cameraFrame,height*width*3);
-#else //Assuming desktop, RGB camera image
             memcpy(cvImageBuf,cameraFrame,height*width*3/2);
+#else //Assuming desktop, RGB camera image
+            memcpy(cvImageBuf,cameraFrame,height*width*3);
 #endif
 
         }
