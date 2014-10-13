@@ -59,7 +59,7 @@ If you're using `.bashrc` to export your environment variables, make sure you la
 
 Load the sample in QtCreator and add:
 
-  - *Android for armeabi-v7a* kit for Android
+  - *Qt 5.3 for Android armv7* kit for Android
   - *Desktop Qt 5.3 GCC 64bit* kit for Desktop
 
 Building and running the sample should now be as easy as clicking the *Run* button.
