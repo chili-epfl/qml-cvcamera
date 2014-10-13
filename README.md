@@ -108,7 +108,12 @@ These instructions assume `armv7-a` target architecture. For other architectures
       -DCMAKE_INSTALL_PREFIX=$ANDROID_STANDALONE_TOOLCHAIN/sysroot/usr/share/opencv/
   ```
 
-  Before building, you can disable every single option except `BUILD_SHARED_LIBS`, `opencv_androidcamera`, `opencv_calib3d`, `opencv_core`, `opencv_features2d`, `opencv_flann`, `opencv_highgui`, `opemcv_imgcodecs`, `opencv_imgproc`, `opencv_video` and `opencv_videoio` which must be enabled. Disabling other options is highly recommended for performance reasons. These options can be accessed with `ccmake ../..`.
+  At this point, enable `BUILD_SHARED_LIBS`.
+
+  OpenCV components other than `calib3d`, `core`, `features2d`, `flann`, `highgui`, `imgcodecs`, `imgproc`, `video` and `videoio` are not needed and can be disabled. Leave these options untouched if you are unsure what to do.
+
+  The options can be accessed with `ccmake ../..` after running `cmake`.
+
 
   ```
   make -j 5
