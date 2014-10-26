@@ -131,8 +131,6 @@ void CVCamera::update()
     DPRINT("Opening camera %d, width: %d, height: %d", device, size.width(), size.height());
 
     //Destroy old thread, camera accessor and buffers
-    if(thread)
-        thread->stop();
     delete thread;
     delete camera;
     if(videoFrame && videoFrame->isMapped())

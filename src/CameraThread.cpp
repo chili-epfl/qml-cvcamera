@@ -31,6 +31,7 @@
 
 CameraTask::CameraTask(BetterVideoCapture* camera, QVideoFrame* videoFrame, unsigned char* cvImageBuf, int width, int height)
 {
+    this->running = true;
     this->camera = camera;
     this->videoFrame = videoFrame;
     this->cvImageBuf = cvImageBuf;
@@ -58,7 +59,6 @@ void CameraTask::convertUVsp2UVp(unsigned char* __restrict srcptr, unsigned char
 
 void CameraTask::doWork()
 {
-    running = true;
 
 #if defined(QT_DEBUG) && !defined(ANDROID)
     QElapsedTimer timer;
@@ -151,9 +151,8 @@ void CameraThread::start()
 
 void CameraThread::stop()
 {
-    if(task != NULL){
+    if(task != NULL)
         task->stop();
-    }
     workerThread.quit();
     workerThread.wait();
 }
