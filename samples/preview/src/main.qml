@@ -1,28 +1,23 @@
 import QtQuick 2.2
 import QtQuick.Window 2.1
-import QtQuick.Controls 1.2
+import QtQuick.Controls 2.5
 import QtMultimedia 5.0
-import CVCamera 1.0
 
-Window {
+ApplicationWindow {
     visible: true
 
     //Width and height stuff is for desktop only, they seem to be ignored on Android (this is expected good behavior)
-    width: camera.size.width
-    height: camera.size.height
-    maximumHeight: camera.size.height
-    maximumWidth: camera.size.width
+    width: camerax.size.width
+    height: camerax.size.height
+    maximumHeight: camerax.size.height
+    maximumWidth: camerax.size.width
 
-    CVCamera {
-        id: camera
-        device: deviceBox.currentIndex
-        size: "640x480"
-    }
+    
 
     VideoOutput {
         anchors.top: imageSizeField.top
         id: output
-        source: camera
+        source: camerax
     }
 
     TextField {
@@ -42,6 +37,6 @@ Window {
         id: deviceBox
         width: 200
         anchors.left: imageSizeSetButton.right
-        model: camera.deviceList
+        model: camerax.deviceList
     }
 }
