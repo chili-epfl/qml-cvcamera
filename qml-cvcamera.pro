@@ -27,7 +27,8 @@ SOURCES += \
     src/CameraThread.cpp \
     src/BetterVideoCapture.cpp
 
-LIBS += -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_videoio
+INCLUDEPATH += $$(OPENCV_DIR)/include/opencv4
+LIBS += -L$$(OPENCV_DIR)/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_videoio
 
 android {
     HEADERS += \
